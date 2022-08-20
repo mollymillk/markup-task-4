@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Rubik Iso';
+    src: url('RubikIso-Regular.eot');
+    src: url('RubikIso-Regular.eot?#iefix') format('embedded-opentype'),
+        url('RubikIso-Regular.woff2') format('woff2'),
+        url('RubikIso-Regular.woff') format('woff'),
+        url('RubikIso-Regular.ttf') format('truetype'),
+        url('RubikIso-Regular.svg#RubikIso-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

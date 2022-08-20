@@ -1,0 +1,188 @@
+@import url(./fonts/rubikiso/stylesheet.css);
+@import url(./fonts/ubuntu/stylesheet.css);
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #4DA1A9;
+  margin-top: -15px;
+}
+header .logo {
+  text-align: center;
+  margin: 15px auto 15px auto;
+  font-family: "Rubik Iso";
+  font-size: 50px;
+  color: #dce2d2;
+}
+
+.main {
+  margin-left: 6%;
+  margin-top: 20px;
+}
+
+.option {
+  float: left;
+  margin: 3px 0 0 100px;
+  font-family: "Ubuntu";
+  font-size: 17px;
+}
+
+.cat {
+  width: 29%;
+  margin: 1%;
+  float: left;
+  box-shadow: 0px 3px 8px 0px #3B5854;
+  font-family: "Ubuntu-Regular";
+}
+.cat:hover {
+  box-shadow: 0px 5px 10px 0px #000000;
+}
+.cat_name {
+  font-family: "Ubuntu";
+  margin-left: 5px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #336f74;
+}
+.cat_name:hover {
+  color: #05575d;
+}
+.cat_description {
+  margin-left: 5px;
+  font-size: 16px;
+}
+.cat_price {
+  margin: 5px 10px 5px 5px;
+  font-size: 18px;
+  float: left;
+  color: #336f74;
+}
+.cat_photo {
+  width: 100%;
+}
+.cat_about {
+  width: 35%;
+  height: 30px;
+  margin: 0 5px 5px 0;
+  border: none;
+  float: right;
+  background: #f91155;
+  color: #FFFFFF;
+  box-shadow: 0px 1px 3px 0px #2d2648;
+}
+.cat_about:hover {
+  box-shadow: 0px 2px 2px 0px #000000;
+  opacity: 0.9;
+}
+.cat_info {
+  display: none;
+}
+
+.toogle {
+  display: none;
+}
+
+label {
+  height: 25px;
+  width: 55px;
+  border-radius: 25px;
+  box-shadow: 0px 1px 3px 0px #2d2648;
+  margin-left: 190px;
+  display: block;
+  position: relative;
+}
+label:before {
+  content: "";
+  left: 2px;
+  top: 1px;
+  height: 23px;
+  width: 23px;
+  display: block;
+  border-radius: 25px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.9);
+  transition: left 0.3s, background-color 0.3s;
+}
+
+.toogle:checked + label:before {
+  left: 30px;
+  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.9);
+  background-color: #f91155;
+}
+
+.toogle:checked ~ .main .cat {
+  width: 70%;
+  margin: 5px 15% 30px 15%;
+  padding: 15px 0 0 0;
+}
+.toogle:checked ~ .main .cat_name {
+  margin: 0;
+  margin-top: 15px;
+}
+.toogle:checked ~ .main .cat_photo {
+  float: left;
+  margin: 0 15px 15px 15px;
+  width: 50%;
+}
+.toogle:checked ~ .main .cat_description {
+  display: none;
+}
+.toogle:checked ~ .main .cat_info {
+  margin: 15px;
+  display: block;
+}
+.toogle:checked ~ .main .cat_price {
+  margin: 7px auto auto 15px;
+  font-size: 30px;
+}
+.toogle:checked ~ .main .cat_about {
+  margin-top: 10px;
+  margin-right: 1.4%;
+  width: 45%;
+}
+
+@media only screen and (max-width: 1036px) {
+  .toogle:not(:checked) ~ .main {
+    margin-left: 10%;
+  }
+  .toogle:not(:checked) ~ .main article {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 868px) {
+  .toogle:not(:checked) ~ .main {
+    margin-left: 10%;
+  }
+  .toogle:not(:checked) ~ .main article {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 795px) {
+  .toogle:not(:checked) ~ .main {
+    margin-left: 9%;
+  }
+  .toogle:not(:checked) ~ .main article {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 752px) {
+  .toogle:not(:checked) ~ .main {
+    margin-left: 10%;
+  }
+  .toogle:not(:checked) ~ .main article {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 579px) {
+  .toogle:not(:checked) ~ .main {
+    margin-left: 12%;
+  }
+  .toogle:not(:checked) ~ .main article {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
