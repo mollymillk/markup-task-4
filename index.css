@@ -5,78 +5,112 @@ body {
   padding: 0;
 }
 
-header {
-  background: #4DA1A9;
-  margin-top: -15px;
-}
-header .logo {
+.logo {
   text-align: center;
   margin: 15px auto 15px auto;
+  padding-bottom: 15px;
   font-family: "Rubik Iso";
   font-size: 50px;
-  color: #dce2d2;
+  color: #3B5854;
+  border-bottom: 2px solid #3B5854;
 }
 
 .main {
-  margin-left: 6%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
+  width: 100%;
+  align-items: center;
 }
 
 .option {
   float: left;
-  margin: 3px 0 0 100px;
+  margin: 10px 0 0 115px;
   font-family: "Ubuntu";
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .cat {
-  width: 29%;
-  margin: 1%;
+  width: 300px;
+  margin: 35px;
   float: left;
-  box-shadow: 0px 3px 8px 0px #3B5854;
+  box-shadow: 0 2px 5px 0 #3B5854;
   font-family: "Ubuntu-Regular";
 }
 .cat:hover {
-  box-shadow: 0px 5px 10px 0px #000000;
+  box-shadow: 0 5px 10px 0 #2d2648;
 }
-.cat_name {
+.cat .full_name {
+  display: none;
   font-family: "Ubuntu";
   margin-left: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 25px;
   text-decoration: none;
-  color: #336f74;
+  color: #3B5854;
+  cursor: pointer;
 }
-.cat_name:hover {
-  color: #05575d;
+.cat .full_name:hover {
+  opacity: 0.8;
 }
-.cat_description {
+.cat .name {
+  font-family: "Ubuntu";
   margin-left: 5px;
-  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #3B5854;
+  cursor: pointer;
 }
-.cat_price {
+.cat .name:hover {
+  display: none;
+}
+.cat .name:hover ~ .full_name {
+  display: block;
+  opacity: 0.8;
+}
+.cat .description {
+  margin-left: 5px;
+  font-size: 15px;
+}
+.cat .category {
+  font-size: 15px;
+  margin-left: 5px;
+}
+.cat .category .describing:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+.cat .price {
   margin: 5px 10px 5px 5px;
-  font-size: 18px;
+  font-size: 20px;
   float: left;
-  color: #336f74;
+  color: #3B5854;
 }
-.cat_photo {
+.cat .photo {
   width: 100%;
 }
-.cat_about {
-  width: 35%;
+.cat .photo:hover {
+  box-shadow: 0px 2px 5px 0px #2d2648;
+}
+.cat .about {
+  width: 100px;
   height: 30px;
   margin: 0 5px 5px 0;
   border: none;
   float: right;
   background: #f91155;
-  color: #FFFFFF;
-  box-shadow: 0px 1px 3px 0px #2d2648;
+  color: #FFF;
+  box-shadow: 0 2px 2px 0 #2d2648;
 }
-.cat_about:hover {
-  box-shadow: 0px 2px 2px 0px #000000;
+.cat .about:hover {
+  box-shadow: 0px 2px 2px 0px #2d2648;
   opacity: 0.9;
 }
-.cat_info {
+.cat .info {
   display: none;
 }
 
@@ -84,105 +118,59 @@ header .logo {
   display: none;
 }
 
-label {
-  height: 25px;
-  width: 55px;
-  border-radius: 25px;
-  box-shadow: 0px 1px 3px 0px #2d2648;
-  margin-left: 190px;
-  display: block;
+.switch {
   position: relative;
+  width: 65px;
+  height: 35px;
+  margin-left: 40px;
+  border-radius: 50px;
+  box-shadow: 2px 1px 4px 2px #2d2648;
 }
-label:before {
-  content: "";
-  left: 2px;
-  top: 1px;
-  height: 23px;
-  width: 23px;
-  display: block;
-  border-radius: 25px;
+.switch .circle {
   position: absolute;
-  background-color: #ffffff;
-  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.9);
-  transition: left 0.3s, background-color 0.3s;
+  left: 0;
+  margin: 2.5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: inset 2px 1.5px 5px 2px #2d2648;
+  transition: left 0.3s;
 }
 
-.toogle:checked + label:before {
+.toogle:checked + .toogle_label > .switch .circle {
+  background: #f91155;
   left: 30px;
-  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.9);
-  background-color: #f91155;
+  transition: left 0.3s;
 }
 
 .toogle:checked ~ .main .cat {
-  width: 70%;
-  margin: 5px 15% 30px 15%;
+  width: 80%;
+  margin: 5px 10% 30px 10%;
   padding: 15px 0 0 0;
 }
-.toogle:checked ~ .main .cat_name {
+.toogle:checked ~ .main .cat .name {
   margin: 0;
   margin-top: 15px;
 }
-.toogle:checked ~ .main .cat_photo {
+.toogle:checked ~ .main .cat .photo {
   float: left;
   margin: 0 15px 15px 15px;
   width: 50%;
 }
-.toogle:checked ~ .main .cat_description {
+.toogle:checked ~ .main .cat .description {
   display: none;
 }
-.toogle:checked ~ .main .cat_info {
+.toogle:checked ~ .main .cat .info {
   margin: 15px;
   display: block;
 }
-.toogle:checked ~ .main .cat_price {
-  margin: 7px auto auto 15px;
+.toogle:checked ~ .main .cat .price {
+  margin: 5px auto auto 15px;
   font-size: 30px;
 }
-.toogle:checked ~ .main .cat_about {
+.toogle:checked ~ .main .cat .about {
   margin-top: 10px;
-  margin-right: 1.4%;
   width: 45%;
-}
-
-@media only screen and (max-width: 1036px) {
-  .toogle:not(:checked) ~ .main {
-    margin-left: 10%;
-  }
-  .toogle:not(:checked) ~ .main article {
-    width: 40%;
-  }
-}
-@media only screen and (max-width: 868px) {
-  .toogle:not(:checked) ~ .main {
-    margin-left: 10%;
-  }
-  .toogle:not(:checked) ~ .main article {
-    width: 40%;
-  }
-}
-@media only screen and (max-width: 795px) {
-  .toogle:not(:checked) ~ .main {
-    margin-left: 9%;
-  }
-  .toogle:not(:checked) ~ .main article {
-    width: 45%;
-  }
-}
-@media only screen and (max-width: 752px) {
-  .toogle:not(:checked) ~ .main {
-    margin-left: 10%;
-  }
-  .toogle:not(:checked) ~ .main article {
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 579px) {
-  .toogle:not(:checked) ~ .main {
-    margin-left: 12%;
-  }
-  .toogle:not(:checked) ~ .main article {
-    width: 80%;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */

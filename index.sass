@@ -1,140 +1,171 @@
 @import url(./fonts/rubikiso/stylesheet.css)
 @import url(./fonts/ubuntu/stylesheet.css)
 
+$base: 5px
+$small_size: 2px
+$green: #3B5854
+$pink: #f91155
+$shadow: #2d2648
+
 body 
     margin: 0
     padding: 0
 
-header
-    background: #4DA1A9
-    margin-top: -15px
-    .logo
-        text-align: center
-        margin: 15px auto 15px auto
-        font-family: 'Rubik Iso'
-        font-size: 50px
-        color: #dce2d2
-.main 
-    margin-left: 6%
-    margin-top: 20px
+
+.logo
+    text-align: center
+    margin: 3*$base auto 3*$base auto
+    padding-bottom: 3*$base
+    font-family: 'Rubik Iso'
+    font-size: 10*$base
+    color: $green
+    border-bottom: 2px solid $green
+
+.main
+    display: block
+    margin-left: auto
+    margin-right: auto
+    margin-top: 4*$base
+    width: 100%
+    align-items: center
+
 .option
     float: left
-    margin: 3px 0 0 100px
+    margin: 2*$base 0 0 23*$base
     font-family: 'Ubuntu'
-    font-size: 17px
+    font-size: 4*$base
+
 .cat
-    width: 29%
-    margin: 1%
+    width: 60*$base
+    margin: 7*$base
     float: left
-    box-shadow: 0px 3px 8px 0px #3B5854
+    box-shadow: 0 $small_size $base 0 $green
     font-family: 'Ubuntu-Regular'
+
     &:hover
-        box-shadow: 0px 5px 10px 0px #000000
-    &_name
+        box-shadow: 0 $base 2*$base 0 $shadow
+
+    .full_name
+        display: none
         font-family: 'Ubuntu'
-        margin-left: 5px
-        font-size: 25px
+        margin-left: $base
+        margin-top: 3*$base
+        margin-bottom: 3*$base
+        font-size: 5*$base
         text-decoration: none
-        color: #336f74
+        color: $green
+        cursor: pointer
+
         &:hover
-            color: #05575d
-    &_description
-        margin-left: 5px
-        font-size: 16px
-    &_price
-        margin: 5px 10px 5px 5px
-        font-size: 18px
+            opacity: 0.8
+
+    .name
+        font-family: 'Ubuntu'
+        margin-left: $base
+        margin-top: 3*$base
+        margin-bottom: 3*$base
+        font-size: 5*$base
+        text-decoration: none
+        color: $green
+        cursor: pointer
+        &:hover
+            display: none
+            & ~ .full_name
+                display: block
+                opacity: 0.8
+
+    .description
+        margin-left: $base
+        font-size: 3*$base
+    
+    .category
+        font-size: 3*$base
+        margin-left: $base
+
+        .describing:hover
+            font-weight: bold
+            cursor: pointer
+
+    .price
+        margin: $base 2*$base $base $base
+        font-size: 4*$base
         float: left
-        color: #336f74
-    &_photo
+        color: $green
+
+    .photo
         width: 100%
-    &_about 
-        width: 35%
-        height: 30px
-        margin: 0 5px 5px 0
+        &:hover
+            box-shadow: 0px $small_size $base 0px $shadow
+
+    .about 
+        width: 20*$base
+        height: 6*$base
+        margin: 0 $base $base 0
         border: none
         float: right
-        background: #f91155
-        color: #FFFFFF
-        box-shadow: 0px 1px 3px 0px #2d2648
+        background: $pink
+        color: #FFF
+        box-shadow: 0 $small_size $small_size 0 $shadow
+
         &:hover
-            box-shadow: 0px 2px 2px 0px #000000
+            box-shadow: 0px $small_size $small_size 0px $shadow
             opacity: 0.9
-    &_info
+
+    .info
         display: none
+
 .toogle 
     display: none
-label 
-    height: 25px
-    width: 55px
-    border-radius: 25px
-    box-shadow: 0px 1px 3px 0px #2d2648
-    margin-left: 190px
-    display: block
+
+.switch
     position: relative
-    &:before 
-        content: ''
-        left: 2px
-        top: 1px
-        height: 23px
-        width: 23px
-        display: block
-        border-radius: 25px
+    width: 13*$base
+    height: 7*$base
+    margin-left: 8 * $base
+    border-radius: 10*$base
+    box-shadow: $small_size 0.2 * $base 2 * $small_size $small_size $shadow
+
+    .circle
         position: absolute
-        background-color: #ffffff
-        box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.9)
-        transition: left .3s, background-color .3s
+        left: 0
+        margin: 0.5 * $base
+        width: 6*$base
+        height: 6*$base
+        border-radius: 10*$base
+        box-shadow: inset $small_size 0.3 * $base $base $small_size $shadow
+        transition: left 0.3s
 
-.toogle:checked + label:before 
-    left: 30px
-    box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.9)
-    background-color: #f91155
+.toogle:checked + .toogle_label > .switch .circle
+        background: $pink
+        left: 6*$base
+        transition: left 0.3s
+    
+
 .toogle:checked ~ .main .cat
-    width: 70%
-    margin: 5px 15% 30px 15%
+    width: 80%
+    margin: $base 10% 6*$base 10%
     padding: 15px 0 0 0
-    &_name
-        margin: 0
-        margin-top: 15px
-    &_photo
-        float: left
-        margin: 0 15px 15px 15px
-        width: 50%
-    &_description
-        display: none
-    &_info
-        margin: 15px
-        display: block
-    &_price
-        margin: 7px auto auto 15px
-        font-size: 30px
-    &_about
-        margin-top: 10px
-        margin-right: 1.4%
-        width: 45%
 
-@media only screen and (max-width: 1036px)
-    .toogle:not(:checked) ~ .main
-        margin-left: 10%
-        article
-            width: 40%
-@media only screen and (max-width: 868px)
-    .toogle:not(:checked) ~ .main
-        margin-left: 10%
-        article
-            width: 40%
-@media only screen and (max-width: 795px)
-    .toogle:not(:checked) ~ .main
-        margin-left: 9%
-        article
-            width: 45%
-@media only screen and (max-width: 752px)
-    .toogle:not(:checked) ~ .main
-        margin-left: 10%
-        article
-            width: 80%
-@media only screen and (max-width: 579px)
-    .toogle:not(:checked) ~ .main
-        margin-left: 12%
-        article
-            width: 80%
+    .name
+        margin: 0
+        margin-top: 3*$base
+
+    .photo
+        float: left
+        margin: 0 3*$base 3*$base 3*$base
+        width: 50%
+
+    .description
+        display: none
+
+    .info
+        margin: 3*$base
+        display: block
+
+    .price
+        margin: $base auto auto 3*$base
+        font-size: 6*$base
+
+    .about
+        margin-top: 2*$base
+        width: 45%
